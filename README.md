@@ -1,5 +1,5 @@
 # HTML-CSS-Template-Generator
-My first local application to generate an ebay/webshop template in html/css to make co-workers jobs easier: - Requires a lot of improvement - developedin 2020
+My first local application to generate an ebay/webshop template in html/css to make co-workers jobs easier: - Requires a lot of improvement - developed in 2020
 
 Application View:
 
