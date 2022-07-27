@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html>
+<!-- CSS Block (Cannot separate from html due to ebay restrictions of external links -->
+<style>
+.header {
+overflow: hidden;
+background-color: #083E66;
+padding: 20px 10px;
+width:100%;
+}
+.logo-header {
+overflow: hidden;
+background-color: #FFFFFF;
+padding: 20px 10px;
+width:100%;
+}
+.logo-header .subscribe{
+background: #F16334;
+padding: 5px;
+display: block;
+font-family: 'Roboto Condensed';
+font-weight:bold;
+width: 120px;
+border-radius: 6px;
+border-style: solid;
+border-width:thin;
+border-color: #FFFFFF;
+font-size: 16px;
+float: right;
+position: relative;
+color: white;
+text-align: center;
+right: 50px;
+}
+.suncoast-logo-img{
+max-width: 100%;
+float:left;
+width:300px;
+height:75px;
+}/* Style the header links */
+.header a {
+float: left;
+color: white;
+text-align: center;
+padding: 12px;
+text-decoration: none;
+font-size: 20px;
+line-height: 25px;
+border-radius: 6px;
+position: relative;
+left: 50px;
+}/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.logo-header a.logo {
+font-size: 25px;
+font-weight: bold;
+}/* On Mouseover Header Elements */
+.header a.category:hover {
+background-color: #F16334;
+color: white;
+transition-duration: .5s;
+}/* Header Elements */
+.header-right {
+padding-left: 110px;
+/*font-family: "Roboto Condensed", Sans-serif;*/
+font-family: 'Roboto Condensed';
+font-weight:bold;
+}
+/*------END HEADER------*/
+/*------BODY------*/
+.header-font{
+line-height: 1.8;
+font-family: 'Roboto', Tahoma, Verdana, Segoe, sans-serif;
+font-size: 24px;
+color: #083e66;
+font-weight: bold;
+}
+* {
+margin: 0;
+padding: 0;
+}
+body {
+background: #FFFFFF;
+/*padding-top: 50px;*/
+}
+/* tabs */
+.tabs label span{
+color:white;
+}
+.tab {
+/*float: left; */
+}
+.tab [type=radio] {
+display: none;
+}
+.content {
+position: absolute;
+top: 0px;
+left: 200px;
+background: white;
+right: 0;
+bottom: 0;
+padding: 20px;
+line-height: 1.8;
+overflow: auto;
+font-size: 20px;
+font-family: 'Roboto', sans-serif;
+color: #555555;
+}
+[type=radio]:checked ~ label {
+background: #F16334;
+z-index: 2;
+}
+[type=radio]:checked ~ label ~ .content {
+z-index: 1;
+}
+[type=radio]:hover ~ label{
+background: #F16334;
+transition-duration: .5s;
+}
+.tabs {
+position: relative;
+min-height: 100vh;
+clear: both;
+width: 100%;
+flex-grow:1;
+}
+/*------END BODY------*/
+/* ------FOOTER----- */
+.footer {
+background-color: #083E66;
+text-align: left;
+font-family: 'Roboto Condensed';
+font-weight: bold;
+font-size: 20px;
+padding: 50px;
+margin-top: 50px;
+}
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+display: inline-block;
+vertical-align: top;
+}
+/* footer left*/
+.footer .footer-left {
+width: 33%;
+padding-right: 15px;
+}
+.footer .about {
+line-height: 20px;
+color: #ffffff;
+font-size: 20px;
+font-weight: normal;
+margin: 0;
+}
+.footer .about span {
+display: block;
+color: #ffffff;
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+.footer .icons {
+margin-top: 25px;
+}
+.footer .icons a {
+display: inline-block;
+width: 35px;
+height: 35px;
+cursor: pointer;
+background-color: #F16334;
+border-radius: 2px;
+font-size: 20px;
+color: #ffffff;
+text-align: center;
+line-height: 35px;
+margin-right: 3px;
+margin-bottom: 5px;
+}
+/* footer center*/
+.footer .footer-center {
+width: 30%;
+}
+.footer .footer-center i {
+background-color: #F16334;
+color: #ffffff;
+font-size: 25px;
+width: 38px;
+height: 38px;
+border-radius: 50%;
+text-align: center;
+line-height: 42px;
+margin: 10px 15px;
+vertical-align: middle;
+}
+.footer .footer-center i.fa-envelope {
+font-size: 20px;
+line-height: 38px;
+}
+.footer .footer-center p {
+display: inline-block;
+color: #ffffff;
+vertical-align: middle;
+margin: 0;
+}
+.footer .footer-center p span {
+display: block;
+font-weight: normal;
+font-size: 20px;
+line-height: 2;
+}
+.footer .footer-center p a {
+color: #F16334;
+text-decoration: none;
+}/* footer right*/
+.footer .footer-right {
+width: 35%;
+}
+.footer h2 {
+color: #ffffff;
+font-size: 36px;
+font-weight: normal;
+margin: 0;
+}
+.footer h2 span {
+color: #0099ff;
+}
+.footer .menu {
+color: #ffffff;
+margin: 20px 0 12px;
+padding: 0;
+}
+.footer .menu a {
+display: inline-block;
+line-height: 1.8;
+text-decoration: none;
+color: inherit;
+}
+.footer .menu a:hover {
+color: #F16334;
+}
+.footer .name {
+color: #F16334;
+font-size: 20px;
+font-weight: normal;
+margin: 0;
+}/* --------DIFFERENT DEVICES/MEDIA QUERIES------ */
+@media(max-width:2048px)
+{
+.tab label
+{
+font-size: 25px;
+text-align: left;
+padding: 15px;
+background: #083E66;
+display: block;
+font-family: 'Roboto Condensed';
+font-weight:bold;
+width: 150px;
+border-style: none;
+border-width:thin;
+border-color: #FFFFFF;
+}
+}
+@media (max-width: 1404px) {
+.footer {
+font-size: 20px;
+}
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+display: block;
+width: 100%;
+}
+.footer .footer-center i {
+margin-left: 0;
+}
+.header a {
+font-size: 25px;
+left: 30px;
+}
+.tab label
+{
+font-size: 25px;
+text-align: left;
+padding: 15px;
+background: #083E66;
+display: block;
+font-family: 'Roboto Condensed';
+font-weight:bold;
+width: 150px;
+border-style: none;
+border-width:thin;
+border-color: #FFFFFF;
+}
+.footer h2{
+padding:20px;
+}
+}@media (max-width: 1025px) {
+.footer {
+font-size: 20px;
+}
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+display: block;
+width: 100%;
+}
+.footer .footer-center i {
+margin-left: 0;
+}
+.footer h2{
+padding:20px;
+}
+.header a {
+font-size: 20px;
+left: -60px;
+}
+.tab label{
+border-style: none;
+border-width:thin;
+border-color: #FFFFFF;
+}
+}
+@media (max-width: 769px) {
+.footer {
+font-size: 20px;
+}
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+display: block;
+width: 100%;
+margin-bottom: 40px;
+text-align: center;
+}
+.footer .footer-center i {
+margin-left: 0;
+}
+.header a {
+font-size: 30px;
+left:-30px;
+}
+.tab label{
+border-style: none;
+border-width:thin;
+border-color: #FFFFFF;
+}}
+@media (max-width: 541px) {
+.header a {
+display: none;
+}
+.tabs{
+position: relative;
+left: 8px;
+}
+.tab{
+float: left;
+}
+.tab label{
+font-size: 18px;
+width:110px;
+padding: 10px;
+border-style: none;
+border-width:thin;
+border-color: #FFFFFF;
+}
+.content {
+position: absolute;
+top: 100px;
+left: 0;
+}
+.header{
+display: none;
+}
+}
+@media (max-width: 414px) {
+.header{
+display: none;
+}
+.header a {
+display: none;
+}
+.tabs{
+position: relative;
+left: 8px;
+}
+.tab{
+float: left;
+padding: -1px 5px
+}
+.tab label{
+font-size: 14px;
+width:58px;
+padding: 20px;
+border-style: none;
+border-width:thin;
+border-color: #FFFFFF;
+}
+.content {
+position: absolute;
+top: 100px;
+left: 0;
+}
+}
+@media (max-width: 376px) {
+.header a {
+display: none;
+}
+.tabs{
+position: relative;
+left: 8px;
+}
+.tab{
+float: left;
+padding: 0px 0px
+}
+.tab label{
+font-size: 14px;
+width:58px;
+padding: 16px;
+border-style: none;
+border-width:thin;
+border-color: #FFFFFF;
+}
+.content {
+position: absolute;
+top: 100px;
+left: 0;
+}
+}
+@media (max-width: 361px) {
+.header a {
+display: none;
+}
+.tabs{
+position: relative;
+left: 8px;
+}
+.tab{
+float: left;
+padding: 0px 0px
+}
+.tab label{
+font-size: 14px;
+width:58px;
+padding: 14px;
+border-style: none;
+border-width:thin;
+border-color: #FFFFFF;
+}
+.content {
+position: absolute;
+top: 100px;
+left: 0;
+}
+}
+@media (max-width: 321px) {
+.header a {
+display: none;
+}
+.tabs{
+position: relative;
+left: 8px;
+}
+.tab{
+float: left;
+padding: 0px 0px
+}
+.tab label{
+font-size: 12px;
+width:52px;
+padding: 12px;
+border-style: none;
+border-width:thin;
+border-color: #FFFFFF;
+}
+.content {
+position: absolute;
+top: 100px;
+left: 0;
+}
+}
+/* --------END DIFFERENT DEVICES/MEDIA QUERIES------ */
+</style>
+<!-- Responsive meta tag -->
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+</head>
+<!-- whole page wrap -->
+<div id="page-wrap">
+<!-- top most div for logo (white space) -->
+<div class="logo-header">
+<a href="https://www.ebay.com.au/usr/suncoastcaravanservice2007">
+<img alt="suncoast caravans" class="suncoast-logo-img" src="https://i.ebayimg.com/00/s/Mjc5WDEwMjQ=/z/qYEAAOSwBhBg2Sp5/$_45.PNG"/>
+</a>
+<!-- logo -->
+<div id="company-logo"></div>
+<a class="logo" href="https://www.ebay.com.au/usr/suncoastcaravanservice2007"></a>
+</div>
+<!-- header elements -->
+<div class="header">
+<div class="header-right">
+<a class="category" href="https://www.ebay.com.au/str/suncoastcaravanservice/RV-Hardware-Accessories/_i.html?_storecat=33516504016" target="_blank">Caravanning</a>
+<a class="category" href="https://www.ebay.com.au/str/suncoastcaravanservice/Chassis-Towing-Accessories/_i.html?_storecat=33516505016" target="_blank">4x4</a>
+<a class="category" href="https://www.ebay.com.au/str/suncoastcaravanservice/Outdoor-BBQ-Leisure/_i.html?_storecat=33516502016" target="_blank">Outdoor</a>
+<a class="category" href="https://www.ebay.com.au/str/suncoastcaravanservice/12V-Appliances-Lights-Power/_i.html?_storecat=33516501016" target="_blank">Electrical</a>
+<a class="category" href="https://www.ebay.com.au/str/suncoastcaravanservice/Appliances-Spare-Parts/_i.html?_storecat=33516503016" target="_blank">Appliances</a>
+<a class="category" href="https://www.ebay.com.au/str/suncoastcaravanservice/Gas-Components-Accessories/_i.html?_storecat=33516506016" target="_blank">Gas</a>
+<a class="category" href="https://www.ebay.com.au/str/suncoastcaravanservice/Plumbing-Accessories/_i.html?_storecat=33516507016" target="_blank">Plumbing</a>
+<a class="category" href="https://www.ebay.com.au/str/suncoastcaravanservice/Toilets-Bathroom-Accessories/_i.html?_storecat=33516508016" target="_blank">Bathroom</a>
+</div>
+</div>
+<!-- Side Vertical Body Tabs & Sections -->
+<div class="tabs">
+<div class="tab">
+<input checked="" id="tab-1" name="tab-group-1" type="radio"/>
+<label for="tab-1"><span>PRODUCT</span></label>
+<!-- Product Details/Description -->
+<div class="content">
+<table align="center" class="product-desc" style="background-color: #ffffff; table-layout:fixed;word-wrap: break-word;" width="80%;">
+<tbody>
+<tr>
+<td colspan="2" id="Description">
+<div id="DescriptionBox" style="line-height: 1.8; font-size: 14px; font-family: 'Roboto', Tahoma, Verdana, Segoe, sans-serif; color: #555555;word-wrap: break-word;">
+<p class="paragraph">SDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+</p><p class="paragraph">SDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSD
+</p></div>
+</td>
+</tr>
+<tr>
+<td id="FnB" style="vertical-align: top;">
+<div id="FeaturesList" style="line-height: 1.8; font-size: 14px; font-family: 'Roboto', Tahoma, Verdana, Segoe, sans-serif; color: #555555;word-wrap: break-word;width:80%">
+<h2 style="font-family: 'Roboto Condensed'; font-size: 18px; color: #083e66; font-weight: bold;">
+FEATURES AND BENEFITS:
+</h2>
+<ul style="list-style-type: square;">
+<li class="feature">SDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSD</li></ul>
+</div>
+</td>
+<td id="Specs" style="vertical-align: top;">
+<div id="SpecificationsList" style="line-height: 1.8; font-size: 14px; font-family: 'Roboto', Tahoma, Verdana, Segoe, sans-serif; color: #555555;word-wrap: break-word;width:80%">
+<h2 style="font-family: 'Roboto Condensed'; font-size: 18px; color: #083e66; font-weight: bold;">
+SPECIFICATIONS:
+</h2>
+<ul style="list-style-type: square;">
+<li class="specification">DSSSSSSSSSSSS</li><li class="specification">SDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSD</li><li class="specification">SDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSD</li></ul>
+</div>
+</td>
+</tr>
+<tr>
+<td id="Included" style="vertical-align: top;">
+<div id="ItemsList" style="line-height: 1.8; font-size: 14px; font-family: 'Roboto', Tahoma, Verdana, Segoe, sans-serif; color: #555555;word-wrap: break-word;width:80%">
+<h2 style="font-family: 'Roboto Condensed'; font-size: 18px; color: #083e66; font-weight: bold;">
+WHAT IS INCLUDED:
+</h2>
+<ul style="list-style-type: square;">
+<li class="item">SDSDSDSDSDSDSDSDSDSDSDSDSD</li><li class="item">SDSDSDSDSDSDSDSDSDSDSDSDS</li><li class="item">SSSSSSSSSSSSSSS</li><li class="item">SDSDSDSDSDSDSDSDSDSDSDSDSD</li></ul>
+</div>
+</td>
+<td id="Important" style="vertical-align: top;">
+<div id="ImportantInfo" style="line-height: 1.8; font-size: 14px; font-family: 'Roboto', Tahoma, Verdana, Segoe, sans-serif; color: #555555;word-wrap: break-word;width:80%">
+<h2 style="font-family: 'Roboto Condensed'; font-size: 18px; color: #083e66; font-weight: bold;">
+IMPORTANT INFORMATION:
+</h2>
+<p class="importantinfoparagraph">DSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSD
+</p><p class="importantinfoparagraph">DDDDDDDDDDDDDDDDDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSD
+</p><p class="importantinfoparagraph">WEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWEWE
+</p></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tab">
+<input id="tab-2" name="tab-group-1" type="radio"/>
+<label for="tab-2"><span>PAYMENT</span></label>
+<div class="content">
+<h2 class="header-font">PLEASE NOTE:</h2>
+<p><b>PLEASE</b> make sure you have <b>ALL</b> Postage &amp; Contact details Correct in your Account with Ebay before
+placing your order as these are imported automatically within the Postage System.
+Once your order has been dispatched there is nothing we can do if Postal Address is incorrect and No refunds will be given.
+</p><p>
+To ensure we can dispatch your order the same day (for purchase made before 1pm),
+please complete your payment by following the instructions on Ebay.
+If you need assistance please send us a message through Ebay and one of our team will guide you through the process.
+We accept payments through PayPal and Direct Deposit.
+</p>
+<p></p>
+<p><br/>If you don't have a PayPal account you can still use this option as a guest and pay with your credit card.
+If paying by Direct Deposit please use your Ebay Username as the reference so we can match up your payment.
+If you have any questions please send us a message and our team will be happy to assist.
+</p>
+</div>
+</div><!-- Shipping Tab -->
+<div class="tab">
+<input id="tab-3" name="tab-group-1" type="radio"/>
+<label for="tab-3"><span>SHIPPING</span></label>
+<div class="content">
+<h2 class="header-font">SHIPPING:</h2>
+<p>We send all Orders with Australia Post and a range of Couriers depending on the buyer's location at our own discretion.
+We also use TNT for all our larger bulky items once again depending on buyer's location.
+Items purchased before 1pm will be sent the same day. Unfortunately, we cannot send out on weekends or public holidays, so orders will be sent out the next working business day.</p>
+<p></p><h2 class="header-font"><br/>PLEASE NOTE:</h2> The delivery time frame estimates displayed are generated by eBay and are sometimes inaccurate.
+Whilst we dispatch daily our courier services use the road network and it can take some
+time for items to be delivered depending on your postal location in relation to the Sunshine Coast.
+All orders that have had a tracking number generated through the postage system will be notified through Ebay.<p></p>
+<br/><p><b>ONCE YOU HAVE RECEIVED YOUR TRACKING NUMBER AND YOUR PARCEL HAS BEEN COLLECTED BY OUR COURIERS
+YOU WILL NEED TO CONTACT YOUR NEAREST LOCAL DEPOT FOR ANY ENQUIRIES AS TO THE WHEREABOUTS OR CONCERNS
+(i.e Australia Post, Fastway Couriers, TNT) AND THEY WILL BE ABLE TO HELP AS LONG AS YOU HAVE YOUR TRACKING NUMBER.</b></p>
+<br/><p>We Do Not Ship Internationally</p>
+</div>
+</div>
+<div class="tab">
+<input id="tab-4" name="tab-group-1" type="radio"/>
+<label for="tab-4"><span>RETURNS</span></label>
+<div class="content">
+<p></p><h2 class="header-font">CHANGE OF MIND:</h2>
+If you have changed your mind about your purchase or would like to exchange it for a similar product from us,
+a refund might be approved but return shipping fees are to be paid by the buyer and a 20% restocking fee may be charged.<br/><br/>The item <b>MUST BE</b>  sent back in its original packaging and condition before a refund will be processed.
+We will need to receive the Item back and inspect it before refunds are processed.
+<br/>We <b>WILL NOT</b> accept returns if item has been taken out of original packaging.
+We do not cover return shipping fees for change of mind purchases.
+A shipping fee will be deducted from Refund depending on the weight of the item for all change of mind purchases to cover our original shipping costs.
+For an Exchange of item a separate order will need to be processed by the buyer.
+If there are any other issues you have with your order please don't hesitate to get in touch with us through
+Ebay messages and we will be more than happy to help rectify any problems.
+<p></p>
+<p><br/>
+</p><h2 class="header-font">FAULTY ITEMS:</h2>
+Please contact us within 30 days if you have a faulty item.
+We will ask for the Faulty Item to be returned for inspection before shipping a replacement.
+We will cover all postage costs where item is deemed to be Faulty.
+We do not cover this outside 30 days of purchase.
+If you have received a Damaged Item you MUST contact us within 48hrs so we can organise a replacement to be sent out.
+Please keep your eBay invoice/receipt as after 90 days Ebay deletes them from our records and we are no longer able to print a new one for you.<p></p>
+</div>
+</div>
+<!-- Newsletter Tab -->
+</div>
+<!-- Footer-->
+<footer class="footer">
+<div class="footer-left col-md-4 col-sm-6">
+<p class="about">
+<span> About the company</span> At Suncoast Caravan Service, we aim to provide a one stop shop for all of your caravanning needs.
+Whether you need repairs, insurance, servicing, aftermarket additions, spares or accessories.
+We are bound to have whatever you are looking for!
+</p>
+</div>
+<!-- Unused Center section -->
+<div class="footer-center col-md-4 col-sm-6">
+</div>
+<!-- footer image -->
+<div class="footer-right col-md-4 col-sm-6">
+<a href="https://www.ebay.com.au/usr/suncoastcaravanservice2007">
+<h2> <img src="https://i.ebayimg.com/00/s/NzdYMjcw/z/tnAAAOSwwGxg2VYf/$_45.JPG" style="max-width: 100%;"/></h2>
+</a>
+<!-- Footer Elements -->
+<p class="menu">
+<a href="https://www.ebay.com.au/str/suncoastcaravanservice/RV-Hardware-Accessories/_i.html?_storecat=33516504016">Caravanning | </a>
+<a href="https://www.ebay.com.au/str/suncoastcaravanservice/Chassis-Towing-Accessories/_i.html?_storecat=33516505016">4x4 | </a>
+<a href="https://www.ebay.com.au/str/suncoastcaravanservice/Outdoor-BBQ-Leisure/_i.html?_storecat=33516502016">Outdoor | </a>
+<a href="https://www.ebay.com.au/str/suncoastcaravanservice/12V-Appliances-Lights-Power/_i.html?_storecat=33516501016">Electrical | </a>
+<a href="https://www.ebay.com.au/str/suncoastcaravanservice/Appliances-Spare-Parts/_i.html?_storecat=33516503016">Appliances | </a>
+<a href="https://www.ebay.com.au/str/suncoastcaravanservice/Gas-Components-Accessories/_i.html?_storecat=33516506016">Gas | </a>
+<a href="https://www.ebay.com.au/str/suncoastcaravanservice/Plumbing-Accessories/_i.html?_storecat=33516507016">Plumbing | </a>
+<a href="https://www.ebay.com.au/str/suncoastcaravanservice/Toilets-Bathroom-Accessories/_i.html?_storecat=33516508016">Bathroom</a>
+</p>
+<p class="copyright-name"> © Suncoast Caravan Service 2021</p>
+</div>
+</footer>
+</div>
+
+</html>
